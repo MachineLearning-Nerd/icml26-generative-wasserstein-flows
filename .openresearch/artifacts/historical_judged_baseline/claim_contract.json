@@ -1,0 +1,15 @@
+{
+  "label": "Historical rejected baseline",
+  "paper": "2605.31369",
+  "judged_space_revision": "90e3b80761e36f11697a2f3140c216842b30adb4",
+  "live_score": "5/12",
+  "purpose": "Reconstruct the limited numerical scope that the live judge rated TOY or INCONCLUSIVE. These are not current full-credit claim contracts.",
+  "claims": {
+    "1": "n=10 shared-grid discrete KL objective scaling and minimizer agreement",
+    "2": "n=10 shared-grid discrete KL algebraic scaling identity",
+    "3": "n=10 discrete DV-versus-classical critic values",
+    "4": "one n=12 fixed-kernel MMD line-search step",
+    "5": "no image experiment",
+    "6": "one-dimensional translation family with G=1"
+  }
+}
