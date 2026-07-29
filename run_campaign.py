@@ -216,7 +216,8 @@ def main() -> int:
     for result in results:
         print(f"- Claim {result['claim']}: {result['status']} — {result['scope']}")
     print(f"- Runtime: {runtime:.3f}s")
-    return 0 if all(r["status"] in {"TOY", "BLOCKED"} for r in results) else 1
+    allowed_statuses = {"VERIFIED", "FALSIFIED", "TOY", "BLOCKED"}
+    return 0 if all(r["status"] in allowed_statuses for r in results) else 1
 
 
 if __name__ == "__main__":
