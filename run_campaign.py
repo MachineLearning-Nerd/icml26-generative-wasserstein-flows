@@ -14,11 +14,14 @@ import sys
 import time
 
 import numpy as np
-from scipy.optimize import minimize, minimize_scalar
+from scipy.optimize import minimize
 
 from verification.claim1_exact import run_contract as run_claim1_contract
 from verification.claim2_exact import run_contract as run_claim2_contract
 from verification.claim3_exact import run_contract as run_claim3_contract
+from verification.claim4_eq18_falsification import (
+    run_contract as run_claim4_contract,
+)
 from verification.claim5_source_falsification import (
     run_contract as run_claim5_contract,
 )
@@ -109,36 +112,25 @@ def claim_3() -> dict:
 
 
 def claim_4() -> dict:
-    rng = np.random.default_rng(0)
-    grid = np.linspace(0, 1, 12)
-    mu = np.exp(-((grid - rng.uniform(0.2, 0.4)) ** 2) / 0.02)
-    nu = np.exp(-((grid - rng.uniform(0.55, 0.75)) ** 2) / 0.02)
-    mu /= mu.sum()
-    nu /= nu.sum()
-    sigma = rng.uniform(0.1, 0.2)
-    kernel = np.exp(-((grid[:, None] - grid[None, :]) ** 2) / (2 * sigma**2))
-
-    def mmd2(p: np.ndarray) -> float:
-        delta = p - nu
-        return float(delta @ kernel @ delta)
-
-    tau = 0.1
-
-    def line_objective(alpha: float) -> float:
-        eta = (1 - alpha) * mu + alpha * nu
-        return w2_quantile_1d(mu, eta, grid) / (2 * tau) + mmd2(eta)
-
-    alpha = float(minimize_scalar(line_objective, bounds=(0, 1), method="bounded").x)
-    eta = (1 - alpha) * mu + alpha * nu
-    before, after = mmd2(mu), mmd2(eta)
-    return {
-        "claim": 4,
-        "status": "TOY" if after < before else "BLOCKED",
-        "scope": "one n=12 grid seed; fixed Gaussian kernel; no neural MMD-GAN",
-        "mmd2_before": before,
-        "mmd2_after": after,
-        "line_search_alpha": alpha,
+    result = run_claim4_contract()
+    control = subprocess.run(
+        [
+            sys.executable,
+            "verification/claim4_eq18_falsification.py",
+            "--negative-control",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    result["negative_control"] = {
+        "exit_code": control.returncode,
+        "stdout": control.stdout.strip(),
     }
+    if control.returncode != 1:
+        result["status"] = "BLOCKED"
+    result["claim"] = 4
+    return result
 
 
 def claim_5() -> dict:
