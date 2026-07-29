@@ -117,6 +117,7 @@ def run_contract() -> dict:
     passed = symbolic["passed"] and independent["passed"] and not control["passed_as_claim"]
     return {
         "status": "VERIFIED" if passed else "BLOCKED",
+        "scope": "all admissible probability-measure pairs and bounded critics under the stated assumptions",
         "exact_contract": (
             "For probability measures mu<<nu and every admissible bounded critic h, "
             "DV(h)>=classical(h); their suprema equal KL(mu||nu). When "
