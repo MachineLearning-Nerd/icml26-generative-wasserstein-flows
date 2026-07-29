@@ -51,7 +51,7 @@ this release regression.
 
 No GPU was used. Long or uncertain work used HF `cpu-upgrade`; local work was
 restricted to short, one-core inspection, plotting, manifest, notebook, and
-audit tasks. Through the release regression, 17 managed jobs occupied 551
+audit tasks. Through the release regression, 17 managed jobs occupied 546
 seconds of recorded duration. At the published `$0.0005/min` flavor rate,
 the nominal time-proportional amount is about `$0.0046`; provider
 minute-accounting can differ.

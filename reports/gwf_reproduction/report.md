@@ -136,7 +136,7 @@ syntax, JSON, plotting, and verifier checks.
 | [`orx/c4-eq18-discriminator-counterexample`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/tree/orx/c4-eq18-discriminator-counterexample) | Separate Algorithm 1 from Equation 18 | `uv run --frozen python run_campaign.py` | Claim 4 narrowly FALSIFIED | HF `cpu-upgrade`, 37 s |
 | [`orx/c6-nontrivial-pullback-metric-certificate`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/tree/orx/c6-nontrivial-pullback-metric-certificate) | Nontrivial preconditioning certificate | `uv run --frozen python run_campaign.py` | Claim 6 VERIFIED | HF `cpu-upgrade`, 37 s |
 | [`orx/release-candidate-report-and-logbook`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/tree/orx/release-candidate-report-and-logbook) | Cumulative evaluator-visible regression | `uv run --frozen python run_campaign.py` | All six current verdicts pass; controls exit 1 | HF `cpu-upgrade`, 37 s |
-| `main` | Public landing page, report, notebook, and Space mirror | Not run as an experiment (publication surface) | Published at Space revision `ecb662a76ee42e4a767b465eec292c943d9aac35`; awaiting live judge | No experiment compute |
+| `main` | Public landing page, report, notebook, and Space mirror | Not run as an experiment (publication surface) | Published at Space revision `cc1c8a774ada84485e8fb8f45e83151a67d7a6dc`; awaiting live judge | No experiment compute |
 
 ## Assessment
 

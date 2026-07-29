@@ -14,7 +14,7 @@ The exact theorem checks use symbolic certificates plus continuous independent
 checks. The managed experiments used Hugging Face `cpu-upgrade`; local CPU was
 limited to short, single-core inspection and validation. The live judged score
 remains **5/12** while Space revision
-[`ecb662a76ee42e4a767b465eec292c943d9aac35`](https://huggingface.co/spaces/DineshAI/sJ7ngz2eQx/tree/ecb662a76ee42e4a767b465eec292c943d9aac35)
+[`cc1c8a774ada84485e8fb8f45e83151a67d7a6dc`](https://huggingface.co/spaces/DineshAI/sJ7ngz2eQx/tree/cc1c8a774ada84485e8fb8f45e83151a67d7a6dc)
 awaits evaluator judgment.
 
 - [Illustrated reproduction report](reports/gwf_reproduction/report.md)
