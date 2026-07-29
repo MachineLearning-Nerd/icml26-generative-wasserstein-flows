@@ -1,0 +1,24 @@
+Paper: A Unifying View of Variational Generative Wasserstein Flows
+Source: https://ar5iv.labs.arxiv.org/html/2605.31369
+Proposition 6.3; Appendix G.3, Proposition G.4.
+
+Let theta_{l+1} minimize
+F(mu_theta) + (1/(2 tau)) ||F_theta-F_theta_l||^2_{L2(mu)}.
+Assume:
+1. theta -> F_theta is Frechet differentiable into L2(mu);
+2. its Jacobian is square integrable in a neighborhood of theta_l;
+3. ||theta_{l+1}-theta_l||_2 = O(tau);
+4. theta -> F(mu_theta) is differentiable.
+
+Then, as tau -> 0,
+G(theta_{l+1})(theta_{l+1}-theta_l)/tau
+  = -grad_theta F(mu_{theta_{l+1}}) + o(1),
+where
+G(theta)=integral (partial_theta F_theta)^T(partial_theta F_theta) dmu.
+
+The proof expands
+F_{theta_{l+1}}-F_{theta_l}
+  = partial_theta F_{theta_{l+1}} Delta_l + r_l,
+with ||r_l||_{L2(mu)}=o(||Delta_l||_2), applies Cauchy-Schwarz to the
+Jacobian-remainder term, and uses ||Delta_l||=O(tau) to obtain
+o(||Delta_l||)/tau=o(1).

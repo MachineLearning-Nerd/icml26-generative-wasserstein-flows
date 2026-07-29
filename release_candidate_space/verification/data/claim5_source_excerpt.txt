@@ -1,0 +1,35 @@
+Source: https://ar5iv.labs.arxiv.org/html/2605.31369
+Retrieved: 2026-07-29T11:22:44Z
+Full HTML SHA-256: 9e465ccada2014404d315c46108399b4ee49693d09d9866ff3dbd426045fd30a
+Section 5.3:
+"For f-divergences, JKO yields moderate yet consistent improvements."
+
+The complete reported CIFAR-10 FID table:
+Divergence,noJKO,tau=0.01,tau=1,tau=100
+ckMMD,13.96,129.38,12.78,14.12
+chi2,15.60,22.26,15.01,15.87
+KL,15.78,26.94,15.47,17.28
+KL-DV,16.68,25.19,16.56,16.88
+MMD,49.39,28.36,15.76,21.43
+Shannon,14.60,32.24,15.92,15.23
+sMMD,59.79,135.27,26.79,55.59
+Wasserstein-1,35.37,22.66,28.91,35.35
+
+Appendix complementary table:
+"The runs used in this table correspond to different random seeds than those
+reported in Table 4, which explains the slight differences in FID values."
+Divergence,noJKO,tau=0.01,tau=1,tau=100
+ckMMD,13.16,241.52,13.42,14.41
+chi2,17.93,23.16,17.39,17.63
+KL,17.62,34.54,18.30,19.13
+KL-DV,17.98,24.46,18.72,18.86
+MMD,25.48,28.16,16.39,46.62
+Shannon,16.84,31.53,17.26,16.87
+sMMD,62.58,106.66,25.73,47.09
+Wasserstein-1,36.77,22.75,33.34,41.57
+
+Authors' code mapping at revision 6633b553a244634bd2c2e1142603aad1c1fbe55a:
+README.md: "f-divergences (KL, chi², Jensen-Shannon)"
+README.md divergence flag: "KL_DV, KL, MMD, Shannon, chi2, Wasserstein-1"
+losses.py labels the softplus GAN loss branch as "Shannon" and states that
+"Jensen-Shannon" is the corresponding symmetric divergence.

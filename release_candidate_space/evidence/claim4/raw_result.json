@@ -1,0 +1,19 @@
+{
+  "claim": 4,
+  "status": "FALSIFIED",
+  "exact_contract": "Equation 18 can be implemented without optimizing its phi embedding/discriminator while still solving the stated max-min problem.",
+  "independent_checker": {
+    "domain": "mu=delta_1, nu=delta_0, T_t(1)=t, phi in [0,1], k_phi(x,y)=phi^2*x*y (positive semidefinite)",
+    "objective": "max_phi min_t 0.5*(1-t)^2 + phi^2*t^2",
+    "grid_points": 1001,
+    "grid_phi_star": 1.0,
+    "grid_t_star": 0.3333333333333333,
+    "analytic_phi_star": 1.0,
+    "analytic_t_star": 0.3333333333333333,
+    "t_with_phi_fixed_at_zero": 1.0,
+    "generator_solution_shift_without_discriminator": 0.6666666666666667,
+    "passed": true
+  },
+  "source_integrity_passed": true,
+  "limitations": "Only the no-discriminator conjunct attached to Equation 18 is falsified."
+}

@@ -1,0 +1,19 @@
+Paper: A Unifying View of Variational Generative Wasserstein Flows
+Source: https://ar5iv.labs.arxiv.org/html/2605.31369
+Section 4, Algorithm 1 (fixed kernel):
+Compared to f-divergences, Algorithm 1 has no adversarial scheme because the
+squared-MMD witness function is available in closed form.
+
+Section 4, Equation 18 (JKO MMD GAN):
+The kernel is k_phi(x,y)=k(phi(x),phi(y)), and the problem is
+max_phi min_T 1/2 ||Id-T||^2_{L2(mu_l)}
+             + MMD^2_{k_phi}(T#mu_l,nu).
+The paper states that the embedding is learned simultaneously, hence it is a
+discriminator, and that the resulting problem is solved using an adversarial
+scheme (Appendix D.4 and Algorithm 2).
+
+Appendix D.4, Equations 106-108 and Algorithm 2:
+For fixed theta, phi* is in
+argmax_phi 1/2 MMD^2_{k_phi}(T_theta#mu_l,nu).
+Algorithm 2 explicitly updates
+phi_{l}^{i+1}=phi_l^i+eta_h grad_phi MMD_{k_phi}(...).

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "title": "Variational Generative Wasserstein Flows — sJ7ngz2eQx",
+  "emoji": "🌊",
+  "space_id": "DineshAI/sJ7ngz2eQx",
+  "paper": null,
+  "tags": [
+    "icml2026-repro",
+    "paper-sJ7ngz2eQx"
+  ],
+  "updated_at": "2026-07-29T09:45:39+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Variational Generative Wasserstein Flows — sJ7ngz2eQx",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "overview",
+        "title": "overview",
+        "file": "pages/overview/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 689,
+  "revision": "1785318339029196310"
+}

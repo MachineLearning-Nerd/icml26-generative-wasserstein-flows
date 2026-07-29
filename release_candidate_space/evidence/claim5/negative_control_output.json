@@ -1,0 +1,9 @@
+{
+  "command": "uv run --frozen python verification/claim5_source_falsification.py --negative-control",
+  "control": "drop the contradicting Jensen-Shannon row",
+  "complete": false,
+  "missing_required_divergences": ["Shannon"],
+  "expected_exit_code": 1,
+  "observed_exit_code": 1,
+  "passed_as_valid_evidence": false
+}

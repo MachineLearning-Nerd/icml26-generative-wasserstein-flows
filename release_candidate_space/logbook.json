@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "title": "Variational Generative Wasserstein Flows — current verification",
+  "emoji": "🌊",
+  "space_id": "DineshAI/sJ7ngz2eQx",
+  "paper": "https://arxiv.org/abs/2605.31369",
+  "tags": [
+    "icml2026-repro",
+    "paper-sJ7ngz2eQx"
+  ],
+  "updated_at": "2026-07-29T12:50:17.176299+00:00",
+  "root": {
+    "slug": "index",
+    "title": "Current verification",
+    "file": "pages/index.md",
+    "children": [
+      {
+        "slug": "claim1",
+        "title": "Claim 1 — current verification",
+        "file": "pages/claims/claim1.md",
+        "children": []
+      },
+      {
+        "slug": "claim2",
+        "title": "Claim 2 — current verification",
+        "file": "pages/claims/claim2.md",
+        "children": []
+      },
+      {
+        "slug": "claim3",
+        "title": "Claim 3 — current verification",
+        "file": "pages/claims/claim3.md",
+        "children": []
+      },
+      {
+        "slug": "claim4",
+        "title": "Claim 4 — current verification",
+        "file": "pages/claims/claim4.md",
+        "children": []
+      },
+      {
+        "slug": "claim5",
+        "title": "Claim 5 — current verification",
+        "file": "pages/claims/claim5.md",
+        "children": []
+      },
+      {
+        "slug": "claim6",
+        "title": "Claim 6 — current verification",
+        "file": "pages/claims/claim6.md",
+        "children": []
+      },
+      {
+        "slug": "visibility",
+        "title": "Evaluator-visible evidence matrix",
+        "file": "pages/visibility_matrix.md",
+        "children": []
+      },
+      {
+        "slug": "red-team",
+        "title": "Evaluator-blind red-team review",
+        "file": "evidence/release/red_team_review.md",
+        "children": []
+      },
+      {
+        "slug": "overview",
+        "title": "Historical rejected baseline",
+        "file": "pages/overview/page.md",
+        "children": []
+      }
+    ]
+  },
+  "agent_view_tokens": 12000,
+  "revision": "release-candidate"
+}

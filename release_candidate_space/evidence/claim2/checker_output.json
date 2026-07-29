@@ -1,0 +1,12 @@
+{
+  "family": "2-D diagonal Gaussian measures with numerical Moreau-envelope differentiation",
+  "rows": [
+    {"divergence": "KL", "epsilon": 0.3, "tau": 0.15, "gamma_half_error": 1.0788853172293131e-08, "gamma_0_35_error": 0.08637744731196349},
+    {"divergence": "chi2", "epsilon": 0.2, "tau": 0.1, "gamma_half_error": 1.25478003840223e-08, "gamma_0_35_error": 0.04716379310938425},
+    {"divergence": "Jensen-Shannon", "epsilon": 0.5, "tau": 0.25, "gamma_half_error": 1.0209852851746701e-08, "gamma_0_35_error": 0.023735902823184135}
+  ],
+  "maximum_gamma_half_error": 1.25478003840223e-08,
+  "minimum_wrong_gamma_error": 0.023735902823184135,
+  "tolerance": 0.0008,
+  "passed": true
+}
