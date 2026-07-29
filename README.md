@@ -13,11 +13,14 @@ CPU image model for the authors' H100-scale training.
 The exact theorem checks use symbolic certificates plus continuous independent
 checks. The managed experiments used Hugging Face `cpu-upgrade`; local CPU was
 limited to short, single-core inspection and validation. The live judged score
-remains **5/12** until the evaluator reviews a new Space revision.
+remains **5/12** while Space revision
+[`ecb662a76ee42e4a767b465eec292c943d9aac35`](https://huggingface.co/spaces/DineshAI/sJ7ngz2eQx/tree/ecb662a76ee42e4a767b465eec292c943d9aac35)
+awaits evaluator judgment.
 
 - [Illustrated reproduction report](reports/gwf_reproduction/report.md)
+- [Final forecast and release report](reports/gwf_reproduction/release_report.md)
 - [Self-contained Marimo tutorial](notebooks/gwf_reproduction.py)
-- [Evaluator candidate entrypoint](candidate_space/pages/index.md)
+- [Exact published Space mirror](release_candidate_space/pages/index.md)
 
 ## Experiment log
 
@@ -31,7 +34,7 @@ remains **5/12** until the evaluator reviews a new Space revision.
 | [`orx/c4-eq18-discriminator-counterexample`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/tree/orx/c4-eq18-discriminator-counterexample) | Distinguish Algorithm 1 from Equation 18 | `uv run --frozen python run_campaign.py` | Claim 4 narrowly FALSIFIED | HF `cpu-upgrade`, 37 s |
 | [`orx/c6-nontrivial-pullback-metric-certificate`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/tree/orx/c6-nontrivial-pullback-metric-certificate) | Nontrivial preconditioning certificate | `uv run --frozen python run_campaign.py` | Claim 6 VERIFIED | HF `cpu-upgrade`, 37 s |
 | [`orx/release-candidate-report-and-logbook`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/tree/orx/release-candidate-report-and-logbook) | Cumulative evaluator-visible regression | `uv run --frozen python run_campaign.py` | All six current verdicts pass; controls exit 1 | HF `cpu-upgrade`, 37 s |
-| `main` | Public landing page, report, and notebook | Not run as an experiment (publication surface) | Awaiting release gates | No experiment compute |
+| `main` | Public landing page, report, notebook, and Space mirror | Not run as an experiment (publication surface) | Published; awaiting live judge | No experiment compute |
 
 ## Upstream workspace
 
