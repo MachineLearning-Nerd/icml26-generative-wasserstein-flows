@@ -144,6 +144,19 @@ def audit(root: Path) -> dict:
     for number in VERDICTS:
         require(f"| {number} |" in matrix_text, f"matrix missing claim {number}", errors)
 
+    release_report = "pages/release_report.md"
+    require(release_report in opened_set, "final release report is unreachable", errors)
+    if release_report in opened_set:
+        report_text = (root / release_report).read_text()
+        for term in [
+            "Previous live judged score: `5/12`",
+            "Conservative projected score range",
+            "Best-supported possible new score",
+            "| Claim | Current points | Possible points | Confidence | Evidence status | Basis and remaining risk |",
+            "exact publication action",
+        ]:
+            require(term in report_text, f"release report missing: {term}", errors)
+
     for relative in ["run_campaign.py", "pyproject.toml", "uv.lock", ".python-version"]:
         require(relative in opened_set, f"environment/command file unreachable: {relative}", errors)
 

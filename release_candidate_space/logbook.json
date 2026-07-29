@@ -8,7 +8,7 @@
     "icml2026-repro",
     "paper-sJ7ngz2eQx"
   ],
-  "updated_at": "2026-07-29T12:50:17.176299+00:00",
+  "updated_at": "2026-07-29T12:54:56.319429+00:00",
   "root": {
     "slug": "index",
     "title": "Current verification",
@@ -54,6 +54,12 @@
         "slug": "visibility",
         "title": "Evaluator-visible evidence matrix",
         "file": "pages/visibility_matrix.md",
+        "children": []
+      },
+      {
+        "slug": "release-report",
+        "title": "Final release forecast and evidence report",
+        "file": "pages/release_report.md",
         "children": []
       },
       {

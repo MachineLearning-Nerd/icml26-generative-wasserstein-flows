@@ -15,6 +15,9 @@ See the [evaluator-visible evidence matrix](visibility_matrix.md) and the
 [evaluator-blind red-team review](../evidence/release/red_team_review.md).
 Scientific rows are complete.
 
+The [final release forecast and evidence report](release_report.md) separates
+the live 5/12 score from projected evaluator outcomes.
+
 Historical judged pages will be preserved additively in the release candidate.
 
 ## Reproduce all current checks

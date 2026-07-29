@@ -47,6 +47,8 @@ evidence/claim6/source_audit.md
 evidence/environment/pyproject.toml
 evidence/release/red_team_pass1.json
 evidence/release/red_team_pass2.json
+evidence/release/red_team_pass3.json
+evidence/release/red_team_pass4.json
 evidence/release/red_team_review.md
 historical/judged-90e3b80761e36f11697a2f3140c216842b30adb4/README.md
 historical/judged-90e3b80761e36f11697a2f3140c216842b30adb4/logbook.json
@@ -62,6 +64,7 @@ pages/claims/claim4.md
 pages/claims/claim5.md
 pages/claims/claim6.md
 pages/index.md
+pages/release_report.md
 pages/visibility_matrix.md
 pyproject.toml
 run_campaign.py

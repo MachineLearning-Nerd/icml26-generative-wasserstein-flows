@@ -33,3 +33,18 @@ It also verified the judged-file subset hashes, text-only upload allowlist,
 displayed key numbers, UTF-8 text, and absence of obvious secret values.
 No conclusion remained unverifiable. The exact file-open record and empty
 failure list are downloadable as [red_team_pass2.json](red_team_pass2.json).
+
+## Pass 3 — PASS
+
+The passing records and review page were then packaged into the candidate and
+the traversal was repeated from a third fresh copy. It opened the added review
+page and both prior records as reachable evidence; all scientific,
+preservation, text-only, and secret-scan gates remained complete. Download the
+[third file-open record](red_team_pass3.json).
+
+## Pass 4 — PASS
+
+After adding the final release forecast, confidence table, command ledger, and
+publication action, a fourth fresh-copy traversal opened the new report and
+again found no unverifiable conclusion. Download the
+[fourth file-open record](red_team_pass4.json).

@@ -85,6 +85,12 @@ def write_logbook(output: Path) -> None:
                 "children": [],
             },
             {
+                "slug": "release-report",
+                "title": "Final release forecast and evidence report",
+                "file": "pages/release_report.md",
+                "children": [],
+            },
+            {
                 "slug": "red-team",
                 "title": "Evaluator-blind red-team review",
                 "file": "evidence/release/red_team_review.md",
@@ -141,7 +147,12 @@ def main() -> int:
     copy_tree(Path("verification"), args.output / "verification")
     release_evidence = args.output / "evidence" / "release"
     release_evidence.mkdir(parents=True, exist_ok=True)
-    for name in ["red_team_pass1.json", "red_team_pass2.json"]:
+    for name in [
+        "red_team_pass1.json",
+        "red_team_pass2.json",
+        "red_team_pass3.json",
+        "red_team_pass4.json",
+    ]:
         shutil.copy2(Path("reports/gwf_reproduction") / name, release_evidence / name)
     for relative in [
         Path("run_campaign.py"),
