@@ -1,0 +1,26 @@
+{
+  "claim": 5,
+  "verdict_target": "FALSIFIED",
+  "paper_anchor": "Section 5.3 and the complete CIFAR-10 FID table restated in Appendix J.3",
+  "statement_under_test": "For f-divergences, JKO yields moderate yet consistent improvements; the named f-divergences are KL, Jensen-Shannon, and chi2.",
+  "operational_quantifier": "For every named f-divergence, at least one reported JKO step size in {0.01, 1, 100} has lower mean CIFAR-10 FID than the matched no-JKO baseline.",
+  "assumptions": [
+    "FID is minimized, as in the paper",
+    "the Small-Net architecture and total number of generator updates are matched",
+    "all reported JKO step sizes are included",
+    "the paper/code label Shannon denotes Jensen-Shannon"
+  ],
+  "complete_domain": {
+    "dataset": "CIFAR-10",
+    "architecture": "Small-Net",
+    "f_divergences": ["chi2", "KL", "Jensen-Shannon"],
+    "jko_step_sizes": [0.01, 1, 100]
+  },
+  "falsification_condition": "At least one named f-divergence has best reported JKO mean FID greater than or equal to its no-JKO mean FID.",
+  "acceptance": [
+    "the complete primary table passes its row-integrity audit",
+    "the exact consistency assertion is false in the primary table",
+    "a different-seed table independently shows the same counterexample",
+    "dropping the counterexample row makes the completeness control exit nonzero"
+  ]
+}

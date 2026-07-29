@@ -17,6 +17,9 @@ import numpy as np
 from scipy.optimize import minimize, minimize_scalar
 
 from verification.claim3_exact import run_contract as run_claim3_contract
+from verification.claim5_source_falsification import (
+    run_contract as run_claim5_contract,
+)
 
 
 SEEDS = [0, 1, 2, 3]
@@ -159,12 +162,25 @@ def claim_4() -> dict:
 
 
 def claim_5() -> dict:
-    return {
-        "claim": 5,
-        "status": "BLOCKED",
-        "scope": "No MNIST/CIFAR-10 training or FID evidence in judged baseline",
-        "reason": "Historical baseline explicitly deferred image experiments",
+    result = run_claim5_contract()
+    control = subprocess.run(
+        [
+            sys.executable,
+            "verification/claim5_source_falsification.py",
+            "--negative-control",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    result["negative_control"] = {
+        "exit_code": control.returncode,
+        "stdout": control.stdout.strip(),
     }
+    if control.returncode != 1:
+        result["status"] = "BLOCKED"
+    result["claim"] = 5
+    return result
 
 
 def claim_6() -> dict:
