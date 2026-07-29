@@ -1,0 +1,12 @@
+{
+  "exit_code": 1,
+  "complete_for_equation_18": false,
+  "control": "substitute the fixed-kernel Algorithm 1 statement for Equation 18",
+  "expected_to_fail": true,
+  "passed_as_valid_evidence": false,
+  "required_eq18_markers": [
+    "max_phi",
+    "Equation 18",
+    "argmax_phi"
+  ]
+}

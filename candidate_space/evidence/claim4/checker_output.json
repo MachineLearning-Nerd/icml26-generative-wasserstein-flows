@@ -1,0 +1,10 @@
+{
+  "analytic_phi_star": 1.0,
+  "analytic_t_star": 0.3333333333333333,
+  "generator_solution_shift_without_discriminator": 0.6666666666666667,
+  "grid_phi_star": 1.0,
+  "grid_points": 1001,
+  "grid_t_star": 0.3333333333333333,
+  "passed": true,
+  "t_with_phi_fixed_at_zero": 1.0
+}

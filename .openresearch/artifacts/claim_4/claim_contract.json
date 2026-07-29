@@ -1,0 +1,23 @@
+{
+  "claim": 4,
+  "verdict_target": "FALSIFIED",
+  "paper_anchor": "Section 4, Equation (18); Appendix D.4, Equations (106)-(108), Algorithm 2",
+  "statement_tested": "The Equation-18 JKO-regularized MMD-GAN does not require explicit discriminator optimization.",
+  "assumptions": [
+    "k_phi is positive semidefinite for every admissible phi",
+    "Equation 18 retains its max_phi min_T optimization order",
+    "phi parameterizes the learned embedding/discriminator",
+    "the counterexample uses probability measures with finite second moment"
+  ],
+  "quantifiers": {
+    "scheme": "the adaptive-kernel JKO MMD-GAN defined by Equation 18",
+    "optimization": "all nondegenerate instances of the stated max_phi min_T problem"
+  },
+  "acceptance": [
+    "the paper source explicitly requires max_phi and calls the scheme adversarial",
+    "Appendix D.4 and Algorithm 2 explicitly update phi",
+    "the authors' implementation executes optimizerD.step() for documented MMD+JKO training",
+    "a valid PSD-kernel instance changes its solution when phi optimization is suppressed",
+    "substituting fixed-kernel Algorithm 1 is rejected with exit code 1"
+  ]
+}
