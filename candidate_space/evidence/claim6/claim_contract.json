@@ -1,0 +1,13 @@
+{
+  "claim": 6,
+  "verdict_target": "VERIFIED",
+  "paper_anchor": "Proposition 6.3, Equations (25)-(26); Appendix G.3",
+  "statement": "G(theta_plus) Delta/tau = -grad energy(theta_plus)+o(1) as tau tends to zero.",
+  "assumptions": [
+    "L2 Frechet differentiable parametrization",
+    "square-integrable Jacobian",
+    "differentiable energy",
+    "Delta=O(tau)",
+    "invertible G for the preconditioned-flow interpretation"
+  ]
+}

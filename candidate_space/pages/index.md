@@ -9,8 +9,10 @@ The current evidence supersedes the historical rejected baseline. Start here:
 | 3 | [Donsker–Varadhan exact bound](claims/claim3.md) | **VERIFIED** |
 | 4 | [Equation 18 discriminator requirement](claims/claim4.md) | **FALSIFIED** |
 | 5 | [Reported FID consistency](claims/claim5.md) | **FALSIFIED** |
+| 6 | [Parametric JKO and preconditioned flow](claims/claim6.md) | **VERIFIED** |
 
-See the [evaluator-visible evidence matrix](visibility_matrix.md). Publication
-remains blocked while any row is `PENDING`.
+See the [evaluator-visible evidence matrix](visibility_matrix.md). Scientific
+rows are complete; preservation, manifest, and blind-review release gates
+still remain.
 
 Historical judged pages will be preserved additively in the release candidate.

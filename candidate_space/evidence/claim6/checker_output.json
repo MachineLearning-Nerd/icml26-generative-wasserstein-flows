@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "implicit_residual_at_smallest_tau": 0.0012148882700321161,
+  "small_tau_implicit_residual_loglog_slope": 0.9832838553707888,
+  "small_tau_velocity_error_loglog_slope": 0.9815069004555019,
+  "minimum_metric_eigenvalue": 0.24681287114541017,
+  "minimum_absolute_metric_off_diagonal": 0.7283224134475077,
+  "identity_metric_control_residual_at_smallest_tau": 1.8314282510351012
+}

@@ -1,0 +1,9 @@
+{
+  "exit_code": 1,
+  "acceptance_tolerance": 0.001,
+  "control": "replace the pullback metric G(theta_plus) by the identity",
+  "expected_to_fail": true,
+  "identity_metric_residual": 1.8314282510351012,
+  "passed_as_claim": false,
+  "smallest_tau": 0.002
+}

@@ -1,7 +1,6 @@
 # Evaluator-visible evidence matrix
 
-This matrix is a release gate, not a score claim. `PENDING` rows are incomplete
-and block publication.
+This matrix is a release gate, not a score claim.
 
 | Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -10,4 +9,4 @@ and block publication.
 | 3 | [Current page](claims/claim3.md) | [Verifier](../evidence/claim3/verify.py) | Yes | [JSON](../evidence/claim3/raw_result.json) | [Output](../evidence/claim3/checker_output.json) | [Exit-1 output](../evidence/claim3/negative_control_output.json) | [Contract](../evidence/claim3/claim_contract.json) | VERIFIED |
 | 4 | [Current page](claims/claim4.md) | [Verifier](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/blob/241a8aeed58b5f5d5dd26f83eb623e7b535db97d/verification/claim4_eq18_falsification.py) | Yes | [JSON](../evidence/claim4/raw_result.json) | [Output](../evidence/claim4/checker_output.json) | [Exit-1 output](../evidence/claim4/negative_control_output.json) | [Contract](../evidence/claim4/claim_contract.json) | FALSIFIED |
 | 5 | [Current page](claims/claim5.md) | [Verifier](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/blob/3e951a4fba16e722ad64fe751f343d529ebdb74a/verification/claim5_source_falsification.py) | Yes | [JSON](../evidence/claim5/raw_result.json) | [Output](../evidence/claim5/checker_output.json) | [Exit-1 output](../evidence/claim5/negative_control_output.json) | [Contract](../evidence/claim5/claim_contract.json) | FALSIFIED |
-| 6 | PENDING | PENDING | PENDING | PENDING | PENDING | PENDING | PENDING | PENDING |
+| 6 | [Current page](claims/claim6.md) | [Verifier](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/blob/3c66d998242e2887de319cbbdf52b110dc06d2cd/verification/claim6_preconditioned_flow.py) | Yes | [JSON](../evidence/claim6/raw_result.json) | [Output](../evidence/claim6/checker_output.json) | [Exit-1 output](../evidence/claim6/negative_control_output.json) | [Contract](../evidence/claim6/claim_contract.json) | VERIFIED |

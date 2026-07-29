@@ -1,0 +1,42 @@
+{
+  "claim": 6,
+  "status": "VERIFIED",
+  "exact_contract": "G(theta_plus)(theta_plus-theta_old)/tau equals -grad F(mu_theta_plus)+o(1) as tau tends to zero.",
+  "family": "mu=N(0,I2), F_theta(z)=z+(a+0.35ab, 0.45a+b+0.15a^2)",
+  "theta_old": [0.7, -0.4],
+  "tau": [0.2, 0.1, 0.05, 0.02, 0.01, 0.005, 0.002],
+  "implicit_residual_norm": [
+    0.08178762944721503,
+    0.049414321009197786,
+    0.027375797719767496,
+    0.011677464038509165,
+    0.005967981024805484,
+    0.003017097409045098,
+    0.0012148882700321161
+  ],
+  "velocity_error_to_preconditioned_flow": [
+    0.6601151865369631,
+    0.3914971783301987,
+    0.21659249824017499,
+    0.0927068007729949,
+    0.04747861314037698,
+    0.024032785784758485,
+    0.009685199179404688
+  ],
+  "identity_metric_control_residual": [
+    1.153387687537732,
+    1.423934997943842,
+    1.6076936370321613,
+    1.7409039837934572,
+    1.790101532548947,
+    1.8157166369355016,
+    1.8314282510351012
+  ],
+  "minimum_metric_eigenvalue": 0.24681287114541017,
+  "minimum_absolute_metric_off_diagonal": 0.7283224134475077,
+  "preconditioning_effect_norm": 1.8420496602312846,
+  "small_tau_implicit_residual_loglog_slope": 0.9832838553707888,
+  "small_tau_velocity_error_loglog_slope": 0.9815069004555019,
+  "symbolic_certificate_passed": true,
+  "source_integrity_passed": true
+}

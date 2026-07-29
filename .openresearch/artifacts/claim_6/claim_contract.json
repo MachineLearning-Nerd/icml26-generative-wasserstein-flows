@@ -1,0 +1,24 @@
+{
+  "claim": 6,
+  "verdict_target": "VERIFIED",
+  "paper_anchor": "Proposition 6.3, Equations (25)-(26); Appendix G.3, Proposition G.4, Equations (209)-(217)",
+  "statement": "The reparameterized JKO update is a first-order implicit discretization of the G(theta)^-1-preconditioned parameter flow.",
+  "assumptions": [
+    "theta to F_theta is Frechet differentiable into L2(mu)",
+    "partial_theta F_theta is square integrable in a neighborhood",
+    "theta to the energy of mu_theta is differentiable",
+    "theta_plus-theta_old is O(tau)",
+    "G is invertible for the preconditioned-flow interpretation"
+  ],
+  "quantifiers": {
+    "tau": "as tau tends to zero",
+    "updates": "each exact minimizer satisfying the assumptions",
+    "conclusion": "G(theta_plus) Delta/tau = -grad energy(theta_plus)+o(1)"
+  },
+  "acceptance": [
+    "the general Frechet-remainder derivation is machine audited",
+    "a nonlinear continuous family with positive-definite off-diagonal G exhibits first-order residual convergence",
+    "the preconditioned velocity convergence is first order",
+    "replacing G by I leaves a nonvanishing residual and exits 1"
+  ]
+}
