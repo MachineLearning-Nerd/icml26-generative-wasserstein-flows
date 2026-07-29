@@ -1,0 +1,23 @@
+{
+  "claim": 1,
+  "verdict_target": "VERIFIED",
+  "paper_anchor": "Proposition 3.1; Equations (6), (9), and Appendix F.1 Equations (109)-(118)",
+  "statement": "For mu_l and nu in P_ac,2(R^d), the full VWGF objective (6) equals the full S-JKO objective (9), after the critic sign change.",
+  "assumptions": [
+    "tau > 0",
+    "mu_l and nu are absolutely continuous probability measures with finite second moments",
+    "f is a proper convex divergence generator and f-star is convex",
+    "the coupling minimax theorem used in Appendix F.1 applies",
+    "the optimal coupling is recoverable by a Monge map because the source is absolutely continuous"
+  ],
+  "quantifiers": {
+    "dimension": "every d",
+    "measures": "every mu_l, nu satisfying the assumptions",
+    "objectives": "the unrestricted mathematical objectives, not finite neural parameterizations"
+  },
+  "acceptance": [
+    "the exact symbolic gap certificate closes",
+    "the continuous anisotropic Gaussian independent checker passes",
+    "removing the Monge premise produces a valid countermodel and exits nonzero"
+  ]
+}

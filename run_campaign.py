@@ -16,6 +16,7 @@ import time
 import numpy as np
 from scipy.optimize import minimize, minimize_scalar
 
+from verification.claim1_exact import run_contract as run_claim1_contract
 from verification.claim3_exact import run_contract as run_claim3_contract
 from verification.claim5_source_falsification import (
     run_contract as run_claim5_contract,
@@ -59,35 +60,19 @@ def discrete_jko(mu: np.ndarray, nu: np.ndarray, grid: np.ndarray, tau: float):
 
 
 def claim_1() -> dict:
-    rows = []
-    passed = True
-    for seed in SEEDS[:3]:
-        rng = np.random.default_rng(seed)
-        grid = np.linspace(-2, 2, 10)
-        mu = rng.dirichlet(np.ones(10))
-        nu = rng.dirichlet(np.ones(10))
-        tau = 0.04
-        eta_jko, jko_value = discrete_jko(mu, nu, grid, tau)
-        eta_suot, suot_scaled = discrete_jko(mu, nu, grid, tau)
-        suot_value = 2 * tau * suot_scaled
-        distance = float(np.linalg.norm(eta_jko - eta_suot))
-        ratio = suot_value / (2 * tau * jko_value)
-        seed_passed = distance < 5e-3 and abs(ratio - 1) < 0.03
-        passed &= seed_passed
-        rows.append(
-            {
-                "seed": seed,
-                "argmin_l2": distance,
-                "value_ratio": ratio,
-                "passed": seed_passed,
-            }
-        )
-    return {
-        "claim": 1,
-        "status": "TOY" if passed else "BLOCKED",
-        "scope": "n=10 shared-grid discrete measures; KL only",
-        "rows": rows,
-    }
+    result = run_claim1_contract()
+    control = subprocess.run(
+        [sys.executable, "verification/claim1_exact.py", "--negative-control"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    result["negative_control"]["exit_code"] = control.returncode
+    result["negative_control"]["stdout"] = control.stdout.strip()
+    if control.returncode != 1:
+        result["status"] = "BLOCKED"
+    result["claim"] = 1
+    return result
 
 
 def claim_2() -> dict:
