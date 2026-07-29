@@ -1,0 +1,37 @@
+{
+  "claim": 5,
+  "status": "FALSIFIED",
+  "experiment_id": "306ef259-f4ec-4bbe-907e-04734e6f23e2",
+  "run_id": "a915c7f0-113b-4a29-ab7d-301f2d9c72fa",
+  "git_sha": "3e951a4fba16e722ad64fe751f343d529ebdb74a",
+  "fixed_command": "uv run --frozen python run_campaign.py",
+  "compute": {
+    "estimated_cores": 1,
+    "selected_flavor": "cpu-upgrade",
+    "actual_logical_cpus": 64,
+    "verifier_runtime_seconds": 0.7213908180128783,
+    "job_runtime_seconds": 21
+  },
+  "exact_contract": "For each named f-divergence (KL, Jensen-Shannon, chi2), at least one reported JKO step size has lower mean CIFAR-10 FID than the matched no-JKO baseline.",
+  "primary_counterexample": {
+    "divergence": "Jensen-Shannon (paper/code label: Shannon)",
+    "no_jko_mean_fid": 14.60,
+    "best_jko_mean_fid": 15.23,
+    "best_jko_tau": 100,
+    "jko_minus_no_jko": 0.6300000000000008
+  },
+  "different_seed_counterexample": {
+    "no_jko_mean_fid": 16.84,
+    "best_jko_mean_fid": 16.87,
+    "best_jko_tau": 100,
+    "jko_minus_no_jko": 0.030000000000001137
+  },
+  "negative_control": {
+    "control": "drop the contradicting Jensen-Shannon row",
+    "missing_required_divergences": ["Shannon"],
+    "expected_exit_code": 1,
+    "observed_exit_code": 1
+  },
+  "source_integrity_passed": true,
+  "limitations": "This falsifies the exact consistency quantifier using the paper's complete reported tables; it does not rerun the H100 image training or dispute that KL and chi2 improve at selected step sizes."
+}

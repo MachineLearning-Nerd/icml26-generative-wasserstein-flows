@@ -1,0 +1,14 @@
+{
+  "primary_table": [
+    {"divergence": "KL", "no_jko_mean_fid": 15.78, "best_jko_mean_fid": 15.47, "best_tau": 1, "jko_minus_no_jko": -0.3099999999999987, "improved": true},
+    {"divergence": "Shannon", "no_jko_mean_fid": 14.60, "best_jko_mean_fid": 15.23, "best_tau": 100, "jko_minus_no_jko": 0.6300000000000008, "improved": false},
+    {"divergence": "chi2", "no_jko_mean_fid": 15.60, "best_jko_mean_fid": 15.01, "best_tau": 1, "jko_minus_no_jko": -0.5899999999999999, "improved": true}
+  ],
+  "different_seed_table": [
+    {"divergence": "KL", "no_jko_mean_fid": 17.62, "best_jko_mean_fid": 18.30, "best_tau": 1, "jko_minus_no_jko": 0.6799999999999997, "improved": false},
+    {"divergence": "Shannon", "no_jko_mean_fid": 16.84, "best_jko_mean_fid": 16.87, "best_tau": 100, "jko_minus_no_jko": 0.030000000000001137, "improved": false},
+    {"divergence": "chi2", "no_jko_mean_fid": 17.93, "best_jko_mean_fid": 17.39, "best_tau": 1, "jko_minus_no_jko": -0.5399999999999991, "improved": true}
+  ],
+  "all_named_f_divergences_improved_primary": false,
+  "all_named_f_divergences_improved_different_seeds": false
+}
