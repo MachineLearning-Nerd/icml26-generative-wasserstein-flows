@@ -25,6 +25,9 @@ from verification.claim4_eq18_falsification import (
 from verification.claim5_source_falsification import (
     run_contract as run_claim5_contract,
 )
+from verification.claim6_preconditioned_flow import (
+    run_contract as run_claim6_contract,
+)
 
 
 SEEDS = [0, 1, 2, 3]
@@ -156,21 +159,25 @@ def claim_5() -> dict:
 
 
 def claim_6() -> dict:
-    ratios = []
-    gradient = -1.7
-    curvature = 0.8
-    for tau in [0.2, 0.1, 0.05, 0.02, 0.01]:
-        theta_star = -tau * gradient / (1 + tau * curvature)
-        flow = -tau * gradient
-        ratios.append(theta_star / flow)
-    passed = abs(ratios[-1] - 1) < 0.01
-    return {
-        "claim": 6,
-        "status": "TOY" if passed else "BLOCKED",
-        "scope": "one-dimensional translation family with G=1",
-        "tau": [0.2, 0.1, 0.05, 0.02, 0.01],
-        "jko_to_flow_ratio": ratios,
+    result = run_claim6_contract()
+    control = subprocess.run(
+        [
+            sys.executable,
+            "verification/claim6_preconditioned_flow.py",
+            "--negative-control",
+        ],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    result["negative_control"] = {
+        "exit_code": control.returncode,
+        "stdout": control.stdout.strip(),
     }
+    if control.returncode != 1:
+        result["status"] = "BLOCKED"
+    result["claim"] = 6
+    return result
 
 
 def main() -> int:
