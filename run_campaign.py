@@ -38,6 +38,8 @@ def w2_quantile_1d(p: np.ndarray, q: np.ndarray, grid: np.ndarray) -> float:
     widths = np.diff(cuts)
     p_idx = np.searchsorted(np.cumsum(p), mids, side="right")
     q_idx = np.searchsorted(np.cumsum(q), mids, side="right")
+    p_idx = np.minimum(p_idx, len(grid) - 1)
+    q_idx = np.minimum(q_idx, len(grid) - 1)
     return float(np.sum(widths * (grid[p_idx] - grid[q_idx]) ** 2))
 
 
