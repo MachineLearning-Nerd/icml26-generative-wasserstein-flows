@@ -7,4 +7,11 @@
 - Negative control: gamma 0.35 must exit 1
 - Fixed command: `uv run --frozen python run_campaign.py`
 - Pinned environment: `pyproject.toml`, `uv.lock`, `.python-version`
-- Current status: pending formal ORX run
+- Frozen Git SHA: `7e4dae6c5b3d6ed6a53808b942155b6115e32106`
+- Successful run: `772255a4-c39d-4d64-a5d7-00c76d536b59`
+- Raw result: `raw_result.json`
+- Independent checker: `checker_output.json`
+- Failure-control output: `negative_control_output.json`
+- Compute: estimated 1 core; HF `cpu-upgrade`; 64 logical CPUs exposed;
+  cumulative runtime 4.198139 s; job 37 s including setup
+- Current status: `VERIFIED`

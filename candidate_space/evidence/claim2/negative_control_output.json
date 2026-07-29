@@ -1,0 +1,8 @@
+{
+  "command": "uv run --frozen python verification/claim2_exact.py --negative-control",
+  "control": "replace gamma=1/2 by gamma=0.35",
+  "minimum_distance_to_jko_update": 0.023735902823184135,
+  "acceptance_tolerance": 0.0008,
+  "expected_exit_code": 1,
+  "observed_exit_code": 1
+}

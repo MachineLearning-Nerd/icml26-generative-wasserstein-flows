@@ -1,0 +1,34 @@
+{
+  "claim": 2,
+  "status": "VERIFIED",
+  "experiment_id": "84df871b-c34a-4399-bafc-ceb64c276a6e",
+  "run_id": "772255a4-c39d-4d64-a5d7-00c76d536b59",
+  "git_sha": "7e4dae6c5b3d6ed6a53808b942155b6115e32106",
+  "fixed_command": "uv run --frozen python run_campaign.py",
+  "compute": {
+    "estimated_cores": 1,
+    "selected_flavor": "cpu-upgrade",
+    "actual_logical_cpus": 64,
+    "runtime_seconds": 4.198139449115843,
+    "job_runtime_seconds": 37
+  },
+  "symbolic_certificate": {
+    "unique_gamma": ["1/2"],
+    "epsilon_substitution": "epsilon=2*tau",
+    "jko_objective_scaling_residual": "0",
+    "cost_scaling_residual": "0",
+    "passed": true
+  },
+  "independent_checker": {
+    "divergences": ["KL", "chi2", "Jensen-Shannon"],
+    "maximum_gamma_half_error": 1.25478003840223e-08,
+    "minimum_wrong_gamma_error": 0.023735902823184135,
+    "tolerance": 0.0008,
+    "passed": true
+  },
+  "negative_control": {
+    "control": "replace gamma=1/2 by gamma=0.35",
+    "expected_exit_code": 1,
+    "observed_exit_code": 1
+  }
+}
