@@ -1,0 +1,9 @@
+{
+  "command": "uv run --frozen python verify.py --negative-control",
+  "control": "classical(h) >= DV(h) for every h",
+  "witness_s": 0.0,
+  "dv_minus_classical": 0.36787944117144233,
+  "expected_exit_code": 1,
+  "observed_exit_code": 1,
+  "passed_as_claim": false
+}

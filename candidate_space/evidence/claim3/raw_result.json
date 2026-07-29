@@ -1,0 +1,54 @@
+{
+  "claim": 3,
+  "experiment_id": "56c11ceb-e2e2-4499-b6eb-b570715000a2",
+  "run_id": "94499562-aeea-4d4f-95f4-02dd61e20d6b",
+  "git_sha": "361e1508d9f1acf47c65aecdc49dbb1aff15076b",
+  "fixed_command": "uv run --frozen python run_campaign.py",
+  "compute": {
+    "estimated_cores": 1,
+    "selected_flavor": "cpu-upgrade",
+    "actual_logical_cpus": 64,
+    "verifier_runtime_seconds": 0.6733091459609568,
+    "job_runtime_seconds": 26,
+    "selection_reason": "A clean locked-environment installation had uncertain runtime."
+  },
+  "status": "VERIFIED",
+  "exact_contract": "For probability measures mu<<nu and every admissible bounded critic h, DV(h)>=classical(h); their suprema equal KL(mu||nu). When 1+log(dmu/dnu) is admissible, both attain KL there.",
+  "symbolic_certificate": {
+    "identity": "DV(h)-classical(h)=exp(s-1)-s, s=log integral(exp(h)) dnu",
+    "stationary_set": "{1}",
+    "second_derivative_at_1": "1",
+    "minimum": "0",
+    "limits": ["oo", "oo"],
+    "passed": true
+  },
+  "independent_checker": {
+    "family": "mu=N(m,1), nu=N(0,1), h(x)=a*x+b",
+    "case_count": 60,
+    "minimum_gap": 0.01783465805601825,
+    "maximum_optimality_error": 8.326672684688674e-17,
+    "passed": true
+  },
+  "negative_control": {
+    "control": "classical(h) >= DV(h) for every h",
+    "witness_s": 0.0,
+    "dv_minus_classical": 0.36787944117144233,
+    "expected_exit_code": 1,
+    "observed_exit_code": 1,
+    "passed_as_claim": false
+  },
+  "determinism": {
+    "random_sampling": false,
+    "parameter_grid": {
+      "m": [-2.0, -0.7, 0.3, 1.5],
+      "a": [-2.3, -0.5, 0.0, 0.8, 2.1],
+      "b": [-1.4, 0.0, 1.2]
+    }
+  },
+  "source": {
+    "url": "https://ar5iv.labs.arxiv.org/html/2605.31369",
+    "retrieved_utc": "2026-07-29T11:22:44Z",
+    "sha256": "9e465ccada2014404d315c46108399b4ee49693d09d9866ff3dbd426045fd30a",
+    "anchor": "Section 3, Equation (11)"
+  }
+}
