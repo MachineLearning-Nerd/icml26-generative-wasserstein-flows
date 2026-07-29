@@ -1,0 +1,13 @@
+{
+  "command": "uv run --frozen python verification/claim1_exact.py --negative-control",
+  "control": "remove absolute continuity/Monge recovery premise A=B",
+  "countermodel": {"A": 1, "B": 0, "C": 0, "D": 0},
+  "remaining_premises": {
+    "minimax_B_equals_C": true,
+    "weak_duality_D_le_A": true,
+    "map_subset_C_le_D": true
+  },
+  "equality_claim_holds": false,
+  "expected_exit_code": 1,
+  "observed_exit_code": 1
+}

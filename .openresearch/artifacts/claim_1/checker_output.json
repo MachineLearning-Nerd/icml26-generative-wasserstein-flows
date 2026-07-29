@@ -1,0 +1,11 @@
+{
+  "family": "2-D anisotropic diagonal Gaussians; KL; affine maps and quadratic optimal critics",
+  "rows": [
+    {"tau": 0.17, "vwgf_value": 3.9787486463292705, "s_jko_value": 3.9787486463292496, "absolute_error": 2.0872192862952943e-14},
+    {"tau": 0.43, "vwgf_value": 4.0256959651823525, "s_jko_value": 4.025695965182349, "absolute_error": 3.552713678800501e-15},
+    {"tau": 0.08, "vwgf_value": 7.880508463207528, "s_jko_value": 7.880508463207484, "absolute_error": 4.440892098500626e-14}
+  ],
+  "maximum_absolute_error": 4.440892098500626e-14,
+  "tolerance": 2e-7,
+  "passed": true
+}
