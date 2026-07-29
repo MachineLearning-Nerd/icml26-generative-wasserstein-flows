@@ -10,10 +10,13 @@ import json
 import os
 import platform
 import subprocess
+import sys
 import time
 
 import numpy as np
 from scipy.optimize import minimize, minimize_scalar
+
+from verification.claim3_exact import run_contract as run_claim3_contract
 
 
 SEEDS = [0, 1, 2, 3]
@@ -107,30 +110,19 @@ def claim_2() -> dict:
 
 
 def claim_3() -> dict:
-    min_gap = float("inf")
-    optimality_error = 0.0
-    for seed in SEEDS:
-        rng = np.random.default_rng(seed)
-        mu = rng.dirichlet(np.ones(10))
-        nu = rng.dirichlet(np.ones(10))
-        h_star = np.log(mu / nu)
-        for h in rng.normal(size=(60, 10)):
-            classical = float(mu @ h - nu @ np.exp(h) + 1)
-            dv = float(mu @ h - np.log(nu @ np.exp(h)))
-            min_gap = min(min_gap, dv - classical)
-        target = kl(mu, nu)
-        optimality_error = max(
-            optimality_error,
-            abs(float(mu @ h_star - np.log(nu @ np.exp(h_star))) - target),
-        )
-    passed = min_gap >= -1e-12 and optimality_error < 1e-12
-    return {
-        "claim": 3,
-        "status": "TOY" if passed else "BLOCKED",
-        "scope": "n=10 discrete measures; 60 random critics per seed",
-        "minimum_dv_minus_classical": min_gap,
-        "optimality_error": optimality_error,
-    }
+    result = run_claim3_contract()
+    control = subprocess.run(
+        [sys.executable, "verification/claim3_exact.py", "--negative-control"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    result["negative_control"]["exit_code"] = control.returncode
+    result["negative_control"]["stdout"] = control.stdout.strip()
+    if control.returncode != 1:
+        result["status"] = "BLOCKED"
+    result["claim"] = 3
+    return result
 
 
 def claim_4() -> dict:

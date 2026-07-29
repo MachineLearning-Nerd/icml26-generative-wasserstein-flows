@@ -1,0 +1,1 @@
+"""Machine-checkable claim contracts."""

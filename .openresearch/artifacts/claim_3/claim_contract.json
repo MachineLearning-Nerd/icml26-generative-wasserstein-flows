@@ -1,0 +1,23 @@
+{
+  "claim": 3,
+  "paper_anchor": "Section 3.1, Equation (11), HTML anchors S3.E11 and S3.SS1",
+  "verdict_target": "VERIFIED",
+  "statement": "For probability measures mu absolutely continuous with respect to nu and every admissible bounded critic h, the Donsker-Varadhan objective is no smaller than the classical reverse-KL variational objective. Their suprema both equal KL(mu||nu). If 1 + log(dmu/dnu) is admissible, both attain KL at that critic.",
+  "assumptions": [
+    "mu and nu are probability measures",
+    "mu is absolutely continuous with respect to nu",
+    "h is bounded and measurable so both expectations are finite",
+    "attainment is asserted only when 1 + log(dmu/dnu) belongs to the critic class"
+  ],
+  "quantifiers": {
+    "measures": "for all mu, nu satisfying the assumptions",
+    "critics": "for every admissible h",
+    "bound": "DV(h) >= classical(h)",
+    "optimality": "sup_h DV(h) = sup_h classical(h) = KL(mu||nu)"
+  },
+  "acceptance": [
+    "symbolic scalar inequality certificate passes",
+    "continuous Gaussian independent checker passes",
+    "reversed-inequality negative control exits nonzero"
+  ]
+}
