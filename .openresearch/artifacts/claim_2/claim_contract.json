@@ -1,0 +1,23 @@
+{
+  "claim": 2,
+  "verdict_target": "VERIFIED",
+  "paper_anchor": "Proposition 3.2; Appendix F.2, Equations (119)-(136), especially Lemma F.2",
+  "statement": "A Wasserstein gradient descent step on F_epsilon with gamma=1/2 and epsilon=2*tau is exactly the JKO step for D_f.",
+  "assumptions": [
+    "nu is in P_ac,2(R^d)",
+    "the Moreau minimizer eta-star exists",
+    "mu is regular enough for Lemma F.2's Wasserstein derivative",
+    "the optimal transport map and Kantorovich potential used by Lemma F.2 exist",
+    "f is a valid convex divergence generator"
+  ],
+  "quantifiers": {
+    "divergence": "every f-divergence satisfying the assumptions",
+    "step": "every update for which Lemma F.2 applies",
+    "parameters": "gamma=1/2 and epsilon=2*tau exactly"
+  },
+  "acceptance": [
+    "the gradient-map coefficient certificate passes",
+    "continuous finite-difference checks pass for KL, chi2, and Jensen-Shannon",
+    "gamma=0.35 is rejected with a nonzero exit"
+  ]
+}

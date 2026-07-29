@@ -17,6 +17,7 @@ import numpy as np
 from scipy.optimize import minimize, minimize_scalar
 
 from verification.claim1_exact import run_contract as run_claim1_contract
+from verification.claim2_exact import run_contract as run_claim2_contract
 from verification.claim3_exact import run_contract as run_claim3_contract
 from verification.claim5_source_falsification import (
     run_contract as run_claim5_contract,
@@ -76,25 +77,19 @@ def claim_1() -> dict:
 
 
 def claim_2() -> dict:
-    max_error = 0.0
-    for seed in SEEDS:
-        rng = np.random.default_rng(seed)
-        grid = np.linspace(-2, 2, 10)
-        mu = rng.dirichlet(np.ones(10))
-        nu = rng.dirichlet(np.ones(10))
-        tau = 0.04
-        for _ in range(20):
-            eta = rng.dirichlet(np.ones(10))
-            transport = w2_quantile_1d(mu, eta, grid)
-            f_eps = transport + 2 * tau * kl(eta, nu)
-            jko = transport / (2 * tau) + kl(eta, nu)
-            max_error = max(max_error, abs(f_eps - 2 * tau * jko) / f_eps)
-    return {
-        "claim": 2,
-        "status": "TOY" if max_error < 1e-9 else "BLOCKED",
-        "scope": "n=10 shared-grid discrete measures; KL only",
-        "max_relative_error": max_error,
-    }
+    result = run_claim2_contract()
+    control = subprocess.run(
+        [sys.executable, "verification/claim2_exact.py", "--negative-control"],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    result["negative_control"]["exit_code"] = control.returncode
+    result["negative_control"]["stdout"] = control.stdout.strip()
+    if control.returncode != 1:
+        result["status"] = "BLOCKED"
+    result["claim"] = 2
+    return result
 
 
 def claim_3() -> dict:
