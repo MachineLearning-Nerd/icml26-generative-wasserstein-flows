@@ -67,7 +67,7 @@ See the [exact claim contract](../../evidence/claim3/claim_contract.json),
 [method](../../evidence/claim3/method.md), and
 [pinned environment](../../evidence/environment/pyproject.toml). The complete
 lock is the repository's
-[`uv.lock`](https://github.com/MachineLearning-Nerd/icml26-repro-sJ7ngz2eQx-a-unifying-view-of-variational-generative-wasserstein-flows/blob/361e1508d9f1acf47c65aecdc49dbb1aff15076b/uv.lock)
+[`uv.lock`](https://github.com/MachineLearning-Nerd/icml26-generative-wasserstein-flows/blob/main/uv.lock)
 at the frozen verification revision.
 
 ## Limitation

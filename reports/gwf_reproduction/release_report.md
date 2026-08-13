@@ -33,7 +33,7 @@ or under `historical/judged-90e3b80761e36f11697a2f3140c216842b30adb4/`.
 ## Winning experiment and regression
 
 The winning scientific/release branch is
-`orx/release-candidate-report-and-logbook` at Git SHA
+`release/cumulative-candidate` at Git SHA
 `e6898b5bbc35403b61d4657609c0e87cde3ce567`.
 
 HF run `a892db82-b9dc-44b0-8baa-96a6ac894607` used `cpu-upgrade`, exposed
