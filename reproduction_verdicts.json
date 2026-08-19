@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "paper": "sJ7ngz2eQx",
+  "arxiv": "2605.31369",
+  "source_scope": "ArXiv HTML source audit plus exact claim contracts and complete reported tables",
+  "source_sha256": "9e465ccada2014404d315c46108399b4ee49693d09d9866ff3dbd426045fd30a",
+  "overall_verdict": "PARTIAL_C1_C2_C3_C6_VERIFIED_C4_C5_NARROWLY_FALSIFIED",
+  "claim_statuses": {
+    "C1": "VERIFIED_SCOPED",
+    "C2": "VERIFIED_SCOPED",
+    "C3": "VERIFIED_SCOPED",
+    "C4": "FALSIFIED_SCOPED",
+    "C5": "FALSIFIED_SCOPED",
+    "C6": "VERIFIED_SCOPED"
+  },
+  "evidence": {
+    "c1_maximum_absolute_error": 4.440892098500626e-14,
+    "c2_maximum_correct_update_error": 1.25478003840223e-08,
+    "c2_minimum_wrong_gamma_error": 0.023735902823184135,
+    "c3_continuous_cases": 60,
+    "c3_minimum_gap": 0.01783465805601825,
+    "c3_maximum_optimality_error": 8.326672684688674e-17,
+    "c4_generator_solution_shift": 0.6666666666666667,
+    "c5_primary_shannon_delta_fid": 0.63,
+    "c5_different_seed_shannon_delta_fid": 0.03,
+    "c6_implicit_residual_slope": 0.9832838553707888,
+    "c6_velocity_error_slope": 0.9815069004555019,
+    "c6_minimum_metric_eigenvalue": 0.24681287114541017,
+    "c6_minimum_absolute_metric_off_diagonal": 0.7283224134475077
+  },
+  "historical_external_result": {
+    "live_judge_score": "5/12",
+    "current_score_claim": false
+  },
+  "publication": {
+    "publication_allowed": false,
+    "author_endorsement_claimed": false
+  },
+  "boundary": "C4 and C5 are narrow falsifications of exact source wordings. C1–C3 and C6 are scoped analytic audits; no new H100-scale image training or judge score is claimed."
+}

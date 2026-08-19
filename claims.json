@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "paper": {
+    "title": "A Unifying View of Variational Generative Wasserstein Flows",
+    "arxiv": "2605.31369",
+    "submission": "sJ7ngz2eQx",
+    "source_version": "arXiv HTML retrieved 2026-07-29",
+    "authors": [
+      "Paul Caucheteux",
+      "Clément Bonet",
+      "Anna Korba"
+    ],
+    "source_sha256": "9e465ccada2014404d315c46108399b4ee49693d09d9866ff3dbd426045fd30a"
+  },
+  "overall_status": "PARTIAL_C1_C2_C3_C6_VERIFIED_C4_C5_NARROWLY_FALSIFIED_HISTORICAL_SCORE_5_OF_12_NO_CURRENT_SCORE",
+  "claims": [
+    {
+      "id": "C1",
+      "name": "vwgf_s_jko_equivalence",
+      "status": "VERIFIED_SCOPED",
+      "paper_anchor": "Proposition 3.1; Equations (6), (9), and Appendix F.1",
+      "production": [
+        "release_candidate_space/evidence/claim1/raw_result.json",
+        "release_candidate_space/evidence/claim1/checker_output.json",
+        "verification/claim1_exact.py"
+      ],
+      "controls": [
+        "release_candidate_space/evidence/claim1/negative_control_output.json",
+        "absolute-continuity/Monge premise removal is rejected"
+      ],
+      "scope": "Unrestricted objective equivalence under Proposition 3.1 assumptions, supported by exact gap algebra and three anisotropic Gaussian cases.",
+      "metrics": {
+        "continuous_cases": 3,
+        "maximum_absolute_error": 4.440892098500626e-14
+      }
+    },
+    {
+      "id": "C2",
+      "name": "explicit_wgd_equals_jko",
+      "status": "VERIFIED_SCOPED",
+      "paper_anchor": "Proposition 3.2 and Lemma F.2",
+      "production": [
+        "release_candidate_space/evidence/claim2/raw_result.json",
+        "release_candidate_space/evidence/claim2/checker_output.json",
+        "verification/claim2_exact.py"
+      ],
+      "controls": [
+        "release_candidate_space/evidence/claim2/negative_control_output.json",
+        "gamma=0.35 mutation is rejected"
+      ],
+      "scope": "Exact gamma=1/2 and epsilon=2*tau update contract under the Moreau/transport assumptions.",
+      "metrics": {
+        "divergences": ["KL", "chi2", "Jensen-Shannon"],
+        "maximum_correct_update_error": 1.25478003840223e-08,
+        "minimum_wrong_gamma_error": 0.023735902823184135
+      }
+    },
+    {
+      "id": "C3",
+      "name": "donsker_varadhan_bound",
+      "status": "VERIFIED_SCOPED",
+      "paper_anchor": "Section 3, Equation (11)",
+      "production": [
+        "release_candidate_space/evidence/claim3/raw_result.json",
+        "release_candidate_space/evidence/claim3/checker_output.json",
+        "verification/claim3_exact.py"
+      ],
+      "controls": [
+        "release_candidate_space/evidence/claim3/negative_control_output.json",
+        "reversed classical-versus-DV inequality is rejected"
+      ],
+      "scope": "Pointwise DV/classical ordering and optimum equality under the stated critic and measure assumptions.",
+      "metrics": {
+        "continuous_cases": 60,
+        "minimum_gap": 0.01783465805601825,
+        "maximum_optimality_error": 8.326672684688674e-17
+      }
+    },
+    {
+      "id": "C4",
+      "name": "equation_18_discriminator_requirement",
+      "status": "FALSIFIED_SCOPED",
+      "paper_anchor": "Equation (18), Appendix D.4, Algorithm 2",
+      "production": [
+        "release_candidate_space/evidence/claim4/raw_result.json",
+        "release_candidate_space/evidence/claim4/checker_output.json",
+        "verification/claim4_eq18_falsification.py"
+      ],
+      "controls": [
+        "release_candidate_space/evidence/claim4/negative_control_output.json",
+        "fixed-kernel Algorithm 1 substitution is rejected as incomplete evidence"
+      ],
+      "scope": "Falsifies only the no-discriminator conjunct attached to learned-kernel Equation 18; it does not falsify fixed-kernel Algorithm 1 or all MMD-GAN schemes.",
+      "metrics": {
+        "analytic_phi_star": 1.0,
+        "analytic_t_star": 0.3333333333333333,
+        "fixed_phi_zero_t": 1.0,
+        "generator_solution_shift": 0.6666666666666667
+      }
+    },
+    {
+      "id": "C5",
+      "name": "fid_consistency_across_named_divergences",
+      "status": "FALSIFIED_SCOPED",
+      "paper_anchor": "Section 5.3 and complete reported FID tables",
+      "production": [
+        "release_candidate_space/evidence/claim5/table4.csv",
+        "release_candidate_space/evidence/claim5/different_seeds.csv",
+        "release_candidate_space/evidence/claim5/raw_result.json",
+        "verification/claim5_source_falsification.py"
+      ],
+      "controls": [
+        "release_candidate_space/evidence/claim5/negative_control_output.json",
+        "dropping the contradicting Shannon row is rejected"
+      ],
+      "scope": "Falsifies the complete-table universal consistency wording; selected KL and chi-squared settings still improve and no image training is rerun.",
+      "metrics": {
+        "primary_shannon_delta_fid": 0.63,
+        "different_seed_shannon_delta_fid": 0.03
+      }
+    },
+    {
+      "id": "C6",
+      "name": "parametric_jko_preconditioned_flow",
+      "status": "VERIFIED_SCOPED",
+      "paper_anchor": "Proposition 6.3 and Equation (25)",
+      "production": [
+        "release_candidate_space/evidence/claim6/raw_result.json",
+        "release_candidate_space/evidence/claim6/checker_output.json",
+        "verification/claim6_preconditioned_flow.py"
+      ],
+      "controls": [
+        "release_candidate_space/evidence/claim6/negative_control_output.json",
+        "identity-metric substitution is rejected"
+      ],
+      "scope": "Frechet-remainder derivation and deterministic nonlinear off-diagonal metric audit; not a proof-assistant or neural-training formalization.",
+      "metrics": {
+        "implicit_residual_slope": 0.9832838553707888,
+        "velocity_error_slope": 0.9815069004555019,
+        "minimum_metric_eigenvalue": 0.24681287114541017,
+        "minimum_absolute_metric_off_diagonal": 0.7283224134475077,
+        "identity_metric_control_residual": 1.8314282510351012
+      }
+    }
+  ]
+}

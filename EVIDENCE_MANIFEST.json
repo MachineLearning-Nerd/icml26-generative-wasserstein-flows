@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "manifest_type": "claim_audit_release",
+  "source": {
+    "arxiv": "2605.31369",
+    "source_version": "ArXiv HTML retrieved 2026-07-29",
+    "source_sha256": "9e465ccada2014404d315c46108399b4ee49693d09d9866ff3dbd426045fd30a"
+  },
+  "required_paths": [
+    "README.md",
+    "STATUS.md",
+    "CLAIM_EVIDENCE.md",
+    "SOURCE_AUDIT.md",
+    "ENVIRONMENT.md",
+    "REPORT.md",
+    "branch-audit.md",
+    ".python-version",
+    "pyproject.toml",
+    "uv.lock",
+    "run_campaign.py",
+    "notebooks/gwf_reproduction.py",
+    "scripts/audit_candidate.py",
+    "scripts/build_release_candidate.py",
+    "verification/claim1_exact.py",
+    "verification/claim2_exact.py",
+    "verification/claim3_exact.py",
+    "verification/claim4_eq18_falsification.py",
+    "verification/claim5_source_falsification.py",
+    "verification/claim6_preconditioned_flow.py",
+    "reports/gwf_reproduction/report.md",
+    "reports/gwf_reproduction/release_report.md",
+    "reports/gwf_reproduction/red_team_pass4.json",
+    "release_candidate_space/README.md",
+    "release_candidate_space/logbook.json",
+    "release_candidate_space/pages/index.md",
+    "release_candidate_space/pages/claims/claim1.md",
+    "release_candidate_space/pages/claims/claim2.md",
+    "release_candidate_space/pages/claims/claim3.md",
+    "release_candidate_space/pages/claims/claim4.md",
+    "release_candidate_space/pages/claims/claim5.md",
+    "release_candidate_space/pages/claims/claim6.md",
+    "release_candidate_space/pages/visibility_matrix.md",
+    "release_candidate_space/pages/release_report.md",
+    "release_candidate_space/pages/overview/page.md",
+    "release_candidate_space/evidence/release/red_team_review.md",
+    "release_candidate_space/evidence/release/red_team_pass4.json",
+    "release_candidate_space/manifests/text_upload_allowlist.txt",
+    "release_candidate_space/manifests/candidate_sha256.json",
+    "release_candidate_space/evidence/claim1",
+    "release_candidate_space/evidence/claim2",
+    "release_candidate_space/evidence/claim3",
+    "release_candidate_space/evidence/claim4",
+    "release_candidate_space/evidence/claim5",
+    "release_candidate_space/evidence/claim6",
+    "claims.json",
+    "reproduction_verdicts.json",
+    "CITATION.cff",
+    "AUTHOR_THANK_YOU.md",
+    "AUTONOMOUS_STATE.json",
+    "verify_final.py"
+  ],
+  "claim_evidence": {
+    "C1": [
+      "release_candidate_space/evidence/claim1/raw_result.json",
+      "release_candidate_space/evidence/claim1/checker_output.json",
+      "release_candidate_space/evidence/claim1/negative_control_output.json"
+    ],
+    "C2": [
+      "release_candidate_space/evidence/claim2/raw_result.json",
+      "release_candidate_space/evidence/claim2/checker_output.json",
+      "release_candidate_space/evidence/claim2/negative_control_output.json"
+    ],
+    "C3": [
+      "release_candidate_space/evidence/claim3/raw_result.json",
+      "release_candidate_space/evidence/claim3/checker_output.json",
+      "release_candidate_space/evidence/claim3/negative_control_output.json"
+    ],
+    "C4": [
+      "release_candidate_space/evidence/claim4/raw_result.json",
+      "release_candidate_space/evidence/claim4/checker_output.json",
+      "release_candidate_space/evidence/claim4/negative_control_output.json"
+    ],
+    "C5": [
+      "release_candidate_space/evidence/claim5/table4.csv",
+      "release_candidate_space/evidence/claim5/different_seeds.csv",
+      "release_candidate_space/evidence/claim5/raw_result.json",
+      "release_candidate_space/evidence/claim5/negative_control_output.json"
+    ],
+    "C6": [
+      "release_candidate_space/evidence/claim6/raw_result.json",
+      "release_candidate_space/evidence/claim6/checker_output.json",
+      "release_candidate_space/evidence/claim6/negative_control_output.json"
+    ]
+  },
+  "controls": {
+    "positive_and_negative_route_records": true,
+    "source_pinned": true,
+    "historical_space_paths_preserved": true,
+    "gpu_required_for_current_audit": false,
+    "h100_image_training_rerun_claimed": false
+  },
+  "publication": {
+    "historical_live_score": "5/12",
+    "current_score_claim": false,
+    "publication_allowed": false,
+    "author_endorsement_claimed": false
+  }
+}

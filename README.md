@@ -3,6 +3,14 @@
 Independent, claim-by-claim reproduction audit for the ICML 2026 paper
 [“A Unifying View of Variational Generative Wasserstein Flows”](https://arxiv.org/abs/2605.31369).
 
+> **Audit status:** `PARTIAL_C1_C2_C3_C6_VERIFIED_C4_C5_NARROWLY_FALSIFIED_HISTORICAL_SCORE_5_OF_12_NO_CURRENT_SCORE`
+>
+> Claims 1–3 and 6 are verified within explicit mathematical contracts. Claim
+> 4 falsifies only the no-discriminator reading attached to Equation 18, and
+> Claim 5 falsifies only the complete-table “consistent” quantifier. See
+> [`STATUS.md`](STATUS.md), [`CLAIM_EVIDENCE.md`](CLAIM_EVIDENCE.md), and
+> [`REPORT.md`](REPORT.md) for the standardized audit record.
+
 This repository is an audit and evidence package, not an official author
 implementation. It keeps theorem assumptions, experimental quantifiers, and
 negative controls explicit so a reader can distinguish a verified statement
@@ -86,6 +94,12 @@ and the branch map so an experiment checkout remains self-describing.
   uncertainty estimate is claimed.
 - The live judged score remains `5/12` until the evaluator assesses the new
   Space revision.
+
+The machine-readable claim and evidence package is in [`claims.json`](claims.json),
+[`reproduction_verdicts.json`](reproduction_verdicts.json), and
+[`EVIDENCE_MANIFEST.json`](EVIDENCE_MANIFEST.json). Source/version scope and
+the locked runtime are recorded in [`SOURCE_AUDIT.md`](SOURCE_AUDIT.md) and
+[`ENVIRONMENT.md`](ENVIRONMENT.md).
 
 ## Paper
 
